@@ -1,6 +1,7 @@
 import AuthForm from "../components/AuthForm";
 import { register } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
+// import axios from "axios";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -8,6 +9,25 @@ const Signup = () => {
   const handleSignup = async (formData) => {
     console.log("전송된 formData 확인용!!!!! ====>", formData);
     try {
+      //   const response = await axios.post(
+      //     "https://moneyfulpublicpolicy.co.kr/register",
+      //     {
+      //       userId: formData.userId,
+      //       password: formData.password,
+      //       nickname: formData.nickname,
+      //     }
+      //   );
+      //   const data = response.data;
+      //   if (data.success) {
+      //     navigate("/login");
+      //   } else {
+      //     alert("Signup failed");
+      //   }
+      // } catch (error) {
+      //   console.error("Signup error:", error);
+      //   alert("Signup failed");
+      // }
+
       const response = await register({
         userId: formData.userId,
         password: formData.password,
@@ -16,14 +36,17 @@ const Signup = () => {
       console.log("회원가입 응답:", response);
 
       if (response.success) {
-        alert("회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.");
+        register(response.token);
         navigate("/login");
       } else {
         throw new Error("토큰이 응답에 포함되지 않았습니다.");
       }
     } catch (error) {
-      console.error("회원가입 중 오류:", error);
-      alert("회원가입에 실패했습니다. 다시 시도해주세요.");
+      if (error.response) {
+        console.log("서버 응답 확인:", error.response.data); // 서버가 반환한 메시지를 출력
+      } else {
+        console.log("요청 오류:", error.message);
+      }
     }
   };
 

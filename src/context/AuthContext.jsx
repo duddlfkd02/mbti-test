@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 
@@ -8,12 +8,12 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(!!token);
 
   //token 있으면 불러오기
-  useEffect(() => {
-    const token = localStorage.getItem("accessToken");
-    if (token) {
-      setIsAuthenticated(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("accessToken");
+  //   if (token) {
+  //     setIsAuthenticated(true);
+  //   }
+  // }, []);
 
   const login = (token) => {
     if (token) {
