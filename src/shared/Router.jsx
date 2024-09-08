@@ -7,35 +7,29 @@ import TestPage from "../pages/TestPage";
 import TestResultPage from "../pages/TestResultPage";
 import Layout from "../components/Layout";
 
-import { AuthProvider } from "../context/AuthContext";
 import ProtectedRoute from "../components/ProtectedRoute";
 
 const Router = () => {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
 
-            <Route
-              path="profile"
-              element={<ProtectedRoute element={Profile} />}
-            />
-            <Route
-              path="test"
-              element={<ProtectedRoute element={TestPage} />}
-            />
-            <Route
-              path="result"
-              element={<ProtectedRoute element={TestResultPage} />}
-            />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+          <Route
+            path="profile"
+            element={<ProtectedRoute element={Profile} />}
+          />
+          <Route path="test" element={<ProtectedRoute element={TestPage} />} />
+          <Route
+            path="result"
+            element={<ProtectedRoute element={TestResultPage} />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

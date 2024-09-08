@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const navigate = useNavigate();
   const { isAuthenticated, logout } = useContext(AuthContext); // AuthContext에서 상태와 logout 함수 가져오기
 
@@ -30,7 +30,9 @@ const Layout = ({ children }) => {
           </div>
         </nav>
       </header>
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 };
