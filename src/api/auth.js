@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://moneyfulpublicpolicy.co.kr/";
+const API_URL = "https://moneyfulpublicpolicy.co.kr";
 
 export const register = async (userData) => {
   const response = await axios.post(`${API_URL}/register`, userData);
@@ -9,6 +9,7 @@ export const register = async (userData) => {
 
 export const login = async (userData) => {
   const response = await axios.post(`${API_URL}/login`, userData);
+  console.log(response);
   return response.data;
 };
 
@@ -28,7 +29,8 @@ export const updateProfile = async (token, imgFile, nickname) => {
 
   const response = await axios.post(`${API_URL}/profile`, formData, {
     headers: {
-      // "Content-Tyoe": "multipart/form-data",
+      // "Content-Type": "multipart/form-data",
+      // "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   });

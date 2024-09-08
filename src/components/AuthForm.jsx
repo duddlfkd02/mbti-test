@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-const AuthForm = (mode) => {
-  const navigate = useNavigate();
+const AuthForm = ({ mode, onSubmit }) => {
+  // const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    id: "",
+    userId: "",
     password: "",
     nickname: mode === "signup" ? "" : null,
   });
@@ -20,18 +20,32 @@ const AuthForm = (mode) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/");
+    if (onSubmit) {
+      onSubmit(formData); // 부모 컴포넌트로 formData 전달
+    }
+    // navigate("/");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="flex flex-col p-4 ">
       <input
         type="text"
-        name="id"
-        value={formData.id}
+        name="userId"
+        value={formData.userId}
         onChange={handleChange}
         placeholder="아이디"
         required
+        className="w-50 p-4 m-4 border border-gray-300 rounded-lg"
+      />
+      <input
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        placeholder="비밀번호"
+        minLength="4"
+        required
+        className="w-50 p-4 m-4 border border-gray-300 rounded-lg"
       />
       {mode === "signup" && (
         <input
@@ -41,11 +55,11 @@ const AuthForm = (mode) => {
           onChange={handleChange}
           placeholder="닉네임"
           required
-          className="w-full p-4 border border-gray-300 rounded-lg"
+          className="w-50 p-4 m-4 border border-gray-300 rounded-lg"
         />
       )}
 
-      <button type="button">{mode === "login" ? "로그인" : "회원가입"}</button>
+      <button type="submit">{mode === "login" ? "로그인" : "회원가입"}</button>
     </form>
   );
 };
