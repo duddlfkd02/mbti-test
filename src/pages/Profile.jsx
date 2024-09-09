@@ -3,8 +3,8 @@ import { AuthContext } from "../context/AuthContext";
 import { updateProfile } from "../api/auth";
 
 const Profile = () => {
-  const { user, setUser } = useContext(AuthContext); // 전역에서 user 정보 가져오기
-  const [nickname, setNickname] = useState(user?.nickname || ""); // 닉네임 초기값 설정
+  const { user, setUser } = useContext(AuthContext);
+  const [nickname, setNickname] = useState(user?.nickname || "");
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -20,17 +20,24 @@ const Profile = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const response = await updateProfile(token, nickname);
+      console.log(response);
 
       if (response.success) {
+        setUser((prevState) => ({
+          ...prevState,
+          nickname: response.nickname,
+        }));
         setFeedbackMessage("프로필이 성공적으로 업데이트되었습니다.");
-        setUser({ ...user, nickname }); // 전역 상태의 user 정보 업데이트
+        setNickname(response.nickname); // 닉네임을 새 값으로 설정
+        setNickname("");
       } else {
-        setFeedbackMessage("프로필 업데이트에 실패했습니다.");
+        alert("닉네임 변경에 실패했습니다.");
       }
     } catch (error) {
-      console.error("프로필 업데이트 중 오류:", error);
-      setFeedbackMessage("프로필 업데이트 중 오류가 발생했습니다.");
+      console.error("Failed to update nickname:", error);
+      alert("닉네임 변경에 실패했습니다.");
     } finally {
+      //변경되면 무조건 살행 종료!
       setIsLoading(false);
     }
   };
@@ -40,6 +47,7 @@ const Profile = () => {
       <h1>프로필 수정</h1>
       <form onSubmit={handleSubmit}>
         <div>
+          <h3>현재 닉네임: {user?.nickname}</h3>
           <label>닉네임</label>
           <input
             type="text"

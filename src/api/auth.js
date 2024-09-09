@@ -27,6 +27,8 @@ export const getUserProfile = async (token) => {
 };
 
 export const updateProfile = async (token, nickname) => {
+  console.log("updateProfile token 확인 =>>", token);
+  console.log("updateProfile nickname 확인 =>>", token.nickname);
   const formData = new FormData();
   formData.append("nickname", nickname);
 
@@ -36,5 +38,6 @@ export const updateProfile = async (token, nickname) => {
       Authorization: `Bearer ${token}`,
     },
   });
+  console.log("서버 응답 확인 =>", response.data);
   return response.data;
 };
