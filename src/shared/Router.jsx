@@ -24,7 +24,7 @@ const Router = () => {
           />
           <Route path="test" element={<ProtectedRoute element={TestPage} />} />
           <Route
-            path="result"
+            path="results"
             element={<ProtectedRoute element={TestResultPage} />}
           />
         </Route>

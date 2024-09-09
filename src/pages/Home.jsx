@@ -50,7 +50,7 @@ const Home = () => {
 
       {isAuthenticated ? (
         <>
-          <Link to="/result">내 성격 알아보러 가기</Link>
+          <Link to="/results">내 성격 알아보러 가기</Link>
         </>
       ) : (
         <button onClick={handleClick}>마이페이지로 가기</button>
