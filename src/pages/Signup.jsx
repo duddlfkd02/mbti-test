@@ -9,34 +9,15 @@ const Signup = () => {
   const handleSignup = async (formData) => {
     console.log("전송된 formData 확인용!!!!! ====>", formData);
     try {
-      //   const response = await axios.post(
-      //     "https://moneyfulpublicpolicy.co.kr/register",
-      //     {
-      //       userId: formData.userId,
-      //       password: formData.password,
-      //       nickname: formData.nickname,
-      //     }
-      //   );
-      //   const data = response.data;
-      //   if (data.success) {
-      //     navigate("/login");
-      //   } else {
-      //     alert("Signup failed");
-      //   }
-      // } catch (error) {
-      //   console.error("Signup error:", error);
-      //   alert("Signup failed");
-      // }
-
       const response = await register({
-        userId: formData.userId,
+        id: formData.userId,
         password: formData.password,
         nickname: formData.nickname,
       });
       console.log("회원가입 응답:", response);
 
       if (response.success) {
-        register(response.token);
+        // register(response.token);
         navigate("/login");
       } else {
         throw new Error("토큰이 응답에 포함되지 않았습니다.");

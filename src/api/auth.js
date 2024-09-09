@@ -15,11 +15,14 @@ export const login = async (userData) => {
 };
 
 export const getUserProfile = async (token) => {
-  const response = await axios.get(`${API_URL}/profile`, {
+  // console.log("token 확인 =>>", token);
+  const response = await axios.get(`${API_URL}/user`, {
     headers: {
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   });
+
   return response.data;
 };
 
@@ -30,7 +33,6 @@ export const updateProfile = async (token, nickname) => {
   const response = await axios.patch(`${API_URL}/profile`, formData, {
     headers: {
       "Content-Type": "multipart/form-data",
-      // "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   });
