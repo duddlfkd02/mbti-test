@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://cooked-astonishing-balance.glitch.me/testResults";
+const API_URL = "https://south-showy-garden.glitch.me/testResults";
 
 export const getTestResults = async () => {
   const response = await axios.get(API_URL);

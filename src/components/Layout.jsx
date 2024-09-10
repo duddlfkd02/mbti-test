@@ -4,7 +4,8 @@ import { AuthContext } from "../context/AuthContext";
 
 const Layout = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, logout } = useContext(AuthContext);
+  const { isAuthenticated, logout, user } = useContext(AuthContext);
+  const isLoggendIn = user?.nickname;
 
   const handleLogout = () => {
     const confirmLogout = window.confirm("로그아웃 하시겠습니까?");
@@ -24,6 +25,13 @@ const Layout = () => {
           >
             Home
           </Link>
+          {isLoggendIn ? (
+            <>
+              <h3>{user?.nickname}님 환영합니다!</h3>
+            </>
+          ) : (
+            <></>
+          )}
           <div className="space-x-10 font-medium text-lg">
             {isAuthenticated ? (
               <>
