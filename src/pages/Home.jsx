@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
     <div className="w-full flex p-8 flex-col justify-center align-middle items-center text-center">
-      <h1 className="text-3xl font-extrabold ">무료 성격 테스트</h1>
+      <h1 className="text-3xl font-extrabold ">⭐️ MBTI 테스트 ⭐️</h1>
       <p className="m-10 text-lg">
         자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.
       </p>

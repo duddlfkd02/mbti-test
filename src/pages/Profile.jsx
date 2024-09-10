@@ -44,7 +44,7 @@ const Profile = () => {
 
   return (
     <div className="w-full flex p-8 flex-col justify-center align-middle items-center text-center">
-      <h1 className="text-3xl font-extrabold ">프로필 수정</h1>
+      <h1 className="text-3xl font-extrabold ">💡 프로필 수정 💡</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <h3 className="text-ls mt-8 text-rose-400">

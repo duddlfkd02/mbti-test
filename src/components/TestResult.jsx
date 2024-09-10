@@ -1,5 +1,3 @@
-// 자신의 테스트 결과 볼 수 있는 페이지
-
 import { useEffect, useState } from "react";
 import { getTestResults } from "../api/testResults";
 import TestResultList from "../components/TestResultList";

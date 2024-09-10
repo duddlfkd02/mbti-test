@@ -33,7 +33,7 @@ const Signup = () => {
 
   return (
     <div className="w-full flex mt-16 flex-col justify-center align-middle items-center text-center">
-      <h1 className="text-2xl font-extrabold ">회원가입</h1>
+      <h1 className="text-3xl font-extrabold ">🥳 회원가입 🥳</h1>
       <AuthForm mode="signup" onSubmit={handleSignup} />
       <div className="mt-10">
         <p className="text-sm text-gray-600">
