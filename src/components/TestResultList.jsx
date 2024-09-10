@@ -2,7 +2,7 @@ import TestResultItem from "./TestResultItem";
 
 const TestResultList = ({ results, user, onUpdate, onDelete }) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-10">
       {results
         .filter((result) => result.visibility || result.userId === user.id)
         .map((result) => (

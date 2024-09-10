@@ -35,25 +35,41 @@ const Home = () => {
   ];
 
   return (
-    <div>
-      <h1>무료 성격 테스트</h1>
-      <p>자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.</p>
+    <div className="w-full flex p-8 flex-col justify-center align-middle items-center text-center">
+      <h1 className="text-3xl font-extrabold ">무료 성격 테스트</h1>
+      <p className="m-10 text-lg">
+        자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.
+      </p>
 
-      {MOCK_DATA.map((data, index) => {
-        return (
-          <div key={index}>
-            <h3>{data.title}</h3>
-            <p>{data.content}</p>
-          </div>
-        );
-      })}
+      <div className="w-full flex justify-between mb-10">
+        {MOCK_DATA.map((data, index) => {
+          return (
+            <div key={index} className="m-4 p-10 bg-white shadow-lg rounded-lg">
+              <h3 className="text-xl font-semibold leading-loose	">
+                {data.title}
+              </h3>
+              <p>{data.content}</p>
+            </div>
+          );
+        })}
+      </div>
 
       {isAuthenticated ? (
-        <>
-          <Link to="/results">내 성격 알아보러 가기</Link>
-        </>
+        <div>
+          <Link
+            to="/results"
+            className="w-56 bg-indigo-500 hover:bg-indigo-600 text-white font-bold p-4 rounded-full transition"
+          >
+            내 성격 알아보러 가기
+          </Link>
+        </div>
       ) : (
-        <button onClick={handleClick}>마이페이지로 가기</button>
+        <button
+          onClick={handleClick}
+          className="w-56 bg-indigo-500 hover:bg-indigo-600 text-white font-bold p-4 rounded-full transition"
+        >
+          마이페이지로 가기
+        </button>
       )}
     </div>
   );

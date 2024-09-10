@@ -17,18 +17,48 @@ const Layout = () => {
   return (
     <div>
       <header>
-        <nav>
-          <Link to="/">홈</Link>
-          <div>
+        <nav className="w-full flex items-center justify-between bg-white border-b-2 border-gray-100 p-8 mb-10 ">
+          <Link
+            to="/"
+            className="text-white bg-rose-400 px-4 py-2 font-medium text-lg rounded-full hover:bg-rose-300 transition"
+          >
+            Home
+          </Link>
+          <div className="space-x-10 font-medium text-lg">
             {isAuthenticated ? (
               <>
-                <Link to="/profile">프로필</Link>
-                <Link to="/test">테스트</Link>
-                <Link to="/results">결과보기</Link>
-                <button onClick={handleLogout}>로그아웃</button>
+                <Link
+                  to="/profile"
+                  className="p-2 hover:bg-slate-100 rounded-full "
+                >
+                  😊 Profile
+                </Link>
+                <Link
+                  to="/test"
+                  className="p-2 hover:bg-slate-100 rounded-full "
+                >
+                  👩🏻‍💻 Test
+                </Link>
+                <Link
+                  to="/results"
+                  className="p-2 hover:bg-slate-100 rounded-full"
+                >
+                  🔍 Result
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="text-white bg-indigo-400 px-4 py-2 font-medium text-lg rounded-full hover:bg-indigo-600 transition"
+                >
+                  Logout
+                </button>
               </>
             ) : (
-              <Link to="/login">로그인</Link>
+              <Link
+                to="/login"
+                className="text-white bg-indigo-400 px-4 py-3 font-medium text-lg rounded-full hover:bg-indigo-600 transition"
+              >
+                Login
+              </Link>
             )}
           </div>
         </nav>

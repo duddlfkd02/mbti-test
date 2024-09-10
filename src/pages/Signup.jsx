@@ -32,15 +32,19 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h1>회원가입</h1>
-        <AuthForm mode="signup" onSubmit={handleSignup} />
-        <div>
-          <p>
-            이미 계정이 있으신가요? <Link to="/login">로그인</Link>
-          </p>
-        </div>
+    <div className="w-full flex mt-16 flex-col justify-center align-middle items-center text-center">
+      <h1 className="text-2xl font-extrabold ">회원가입</h1>
+      <AuthForm mode="signup" onSubmit={handleSignup} />
+      <div className="mt-10">
+        <p className="text-sm text-gray-600">
+          이미 계정이 있으신가요?{" "}
+          <Link
+            to="/login"
+            className="font-semibold hover:text-indigo-500 hover:border-b-2 ml-2"
+          >
+            로그인
+          </Link>
+        </p>
       </div>
     </div>
   );

@@ -43,25 +43,31 @@ const Profile = () => {
   };
 
   return (
-    <div>
-      <h1>프로필 수정</h1>
+    <div className="w-full flex p-8 flex-col justify-center align-middle items-center text-center">
+      <h1 className="text-3xl font-extrabold ">프로필 수정</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <h3>현재 닉네임: {user?.nickname}</h3>
-          <label>닉네임</label>
+          <h3 className="text-ls mt-8 text-rose-400">
+            현재 닉네임: {user?.nickname}
+          </h3>
           <input
             type="text"
             value={nickname}
             onChange={handleNicknameChange}
             placeholder="닉네임을 입력하세요"
             required
+            className="w-60 p-4 mt-8 mb-10 border border-gray-300 rounded-lg"
           />
         </div>
-        <button type="submit" disabled={isLoading}>
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="w-40 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 rounded-full transition"
+        >
           {isLoading ? "업데이트 중..." : "프로필 업데이트"}
         </button>
       </form>
-      {feedbackMessage && <p>{feedbackMessage}</p>}
+      {feedbackMessage && <p className="mt-8">{feedbackMessage}</p>}
     </div>
   );
 };
