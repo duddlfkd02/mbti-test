@@ -71,7 +71,7 @@
 
 ## 🥳 최종 화면
 
-![시연화면 움짤](https://github.com/user-attachments/assets/8ed828bd-3519-4c85-95ec-b5cf3f7a96cb)
+![움짤](https://github.com/user-attachments/assets/c5d1ca76-01b7-48f3-acc5-154178cf1420)
 
 ### 메인페이지
 
