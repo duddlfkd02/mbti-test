@@ -112,9 +112,9 @@
 
 ## 🔥 트러블슈팅
 
-[회원가입](<[https://velog.io/@duddlfkd02/MBTI-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85](url)>)
+[1. 로그인 트러블 슈팅](https://velog.io/@duddlfkd02/MBTI-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%EB%A1%9C%EA%B7%B8%EC%9D%B8)
 
-[로그인](https://velog.io/@duddlfkd02/MBTI-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%EB%A1%9C%EA%B7%B8%EC%9D%B8)
+[2. 회원가입 트러블 슈팅](https://velog.io/@duddlfkd02/MBTI-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85)
 
 <br>
 <br>
