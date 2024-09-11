@@ -17,14 +17,22 @@ const Signup = () => {
       console.log("회원가입 응답:", response);
 
       if (response.success) {
-        // register(response.token);
+        alert("회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.");
         navigate("/login");
       } else {
+        alert("다른 아이디나 비밀번호로 가입해주세요");
         throw new Error("토큰이 응답에 포함되지 않았습니다.");
       }
     } catch (error) {
       if (error.response) {
         console.log("서버 응답 확인:", error.response.data); // 서버가 반환한 메시지를 출력
+
+        // 서버 응답에서 중복된 아이디 관련 메시지 확인
+        if (error.response.status === 409) {
+          alert("이미 존재하는 아이디입니다. 다른 아이디를 사용해주세요.");
+        } else {
+          alert("회원가입에 실패했습니다. 다시 시도해주세요.");
+        }
       } else {
         console.log("요청 오류:", error.message);
       }
