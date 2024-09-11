@@ -25,13 +25,7 @@ const Layout = () => {
           >
             Home
           </Link>
-          {isLoggendIn ? (
-            <>
-              <h3>{user?.nickname}님 환영합니다!</h3>
-            </>
-          ) : (
-            <></>
-          )}
+          {isLoggendIn ? <h3>{user?.nickname}님 환영합니다!</h3> : null}
           <div className="space-x-10 font-medium text-lg">
             {isAuthenticated ? (
               <>

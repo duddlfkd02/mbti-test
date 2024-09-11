@@ -20,18 +20,22 @@ export const AuthProvider = ({ children }) => {
         } catch (error) {
           console.error("프로필 정보를 불러오는 데 실패했습니다.", error);
           setIsAuthenticated(false);
+          setUser(null);
         }
+      } else {
+        setIsAuthenticated(false);
+        setUser(null);
       }
     };
 
-    if (isAuthenticated) {
+    if (!user) {
       fetchUserProfile();
     }
-  }, [isAuthenticated, user]);
+  }, [user]);
 
   const login = (token, userData) => {
     if (token) {
-      localStorage.setItem("accessToken", token); // 토큰을 로컬스토리지에 저장
+      localStorage.setItem("accessToken", token);
       setIsAuthenticated(true);
       setUser(userData);
     } else {
