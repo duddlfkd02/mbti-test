@@ -12,6 +12,13 @@ const TestForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const unansweredQuestions = answers.includes(null);
+    if (unansweredQuestions) {
+      alert("모든 문항을 체크해주세요");
+      return;
+    }
+
     onSubmit(answers);
   };
 
